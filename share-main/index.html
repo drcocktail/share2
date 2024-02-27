@@ -287,6 +287,17 @@
                 <div class="greenBarLong"></div>
             </div>
         </div>
+         <div class="slider-container">
+            <div class="slides">
+                <div class="slide"><img src="assets/c2.png" alt="Image 1"></div>
+                <div class="slide"><img src="assets/c1.png" alt="Image 2"></div>
+                <div class="slide"><img src="assets/c3.png" alt="Image 3"></div>
+                <!-- Add more slides as needed -->
+            </div>
+        
+            <div class="slider-btn prev" onclick="prevSlide()">&#10094;</div>
+            <div class="slider-btn next" onclick="nextSlide()">&#10095;</div>
+        </div>
     </div>
 
     <div id="clients">
@@ -320,6 +331,61 @@
             </div>
         </div>    
     </div>
-    <script src="app.js"></script>
+       <script >
+        let currentIndex = 0;
+const totalSlides = document.querySelectorAll('.slide').length;
+ function showSlide(index) {
+        const slides = document.querySelector('.slides');
+        if (index < 0) {
+            currentIndex = totalSlides - 1;
+        } else if (index >= totalSlides) {
+            currentIndex = 0;
+        } else {
+            currentIndex = index;
+        }
+
+        const translateValue = -currentIndex * 100 + '%';
+        slides.style.transform = `translateX(${translateValue})`;
+    }
+
+    function nextSlide() {
+        showSlide(currentIndex + 1);
+    }
+
+    function prevSlide() {
+        showSlide(currentIndex - 1);
+    }
+
+    // Auto slide every 3 seconds (adjust as needed)
+    setInterval(nextSlide, 5000);
+
+
+
+
+    const faqs = document.querySelectorAll(".FAQItem");
+console.log(faqs)
+
+const openFAQ = (i) => {
+    faqs.forEach((a, j) => {
+        if (i == j) {
+            a.classList.toggle("active")
+        }
+        else {
+            a.classList.remove('active');
+        }
+    })
+}
+
+faqs.forEach((a, i) => {
+    a.addEventListener("click", () => { openFAQ(i) })
+})
+
+document.getElementById('hamburger-menu').addEventListener('click', function () {
+    var navLinks = document.getElementById('navLinks');
+    navLinks.style.display = (navLinks.style.display === 'flex') ? 'none' : 'flex';
+});
+
+
+    </script>
 </body>
 </html>
