@@ -130,16 +130,16 @@ body {
     border-radius: 16px;
     margin-left: 50px;
 }
-#card:hover{
+/* #card:hover{
     padding-top: 10px;
     width: 250px;
     height: 350px;
     text-align: center;
     box-shadow: 20px 20px 80px -16px rgba(128, 128, 128, 0.308);
     border-radius: 16px;
-  transition: ease-in-out;
+  transition:ease-in;
   border: 2px #06ce78 solid;
-}
+} */
 #heading{
     border-bottom: 5px #06ce78 solid;
     width: 260px;
@@ -380,6 +380,16 @@ body {
         top:15%;
         max-width:120px;
     
+    }
+
+    #card{
+        margin-top: 25px;
+        width: 250px;
+        height: 350px;
+        text-align: center;
+        box-shadow: 20px 20px 80px -16px rgba(128, 128, 128, 0.308);
+        border-radius: 16px;
+        margin-left: 0px;
     }
 
     
